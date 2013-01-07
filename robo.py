@@ -9,7 +9,7 @@ import smtplib
 import webbrowser
 try:
     pencere = Tk()
-    pencere.title("Robot Yönetim v3.0")
+    pencere.title("Robot Yönetim v3.2 Ubuntu")
     pencere.geometry("300x300")
 
 
