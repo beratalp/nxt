@@ -9,8 +9,8 @@ import smtplib
 import webbrowser
 try:
     pencere = Tk()
-    pencere.title("Robot Yönetim v3.2 Ubuntu")
-    pencere.geometry("300x300")
+    pencere.title("Robot Yönetim v4.0 Alpha - Linux")
+    pencere.geometry("400x300")
 
 
     def albumol():
@@ -232,7 +232,7 @@ try:
         bilgilabel.pack()
         buton15 = Button(olaypen,text=u"FLL yarışması",command=fll)
         buton15.pack(side=TOP,anchor=NW)
-        buton16 = Button(olaypen,text=u"Gösteri",command=show)
+        buton16 = Button(olaypen,text=u"Gösteri #Bozuk, tıklarsanız reset gerekebilir.",command=show)
         buton16.pack(side=TOP,anchor=NW)
     olaysave= open("olaysave.txt","a")
     def fll():
@@ -288,7 +288,7 @@ try:
         olayliste = olaysave2.readline()
         olay = Button(olayacpen,text=olayliste,command=fllana)
         if olayliste == "gosteri \n":
-            os.system("explorer C:\\Documents and Settings\\MehmetAlkan\\Desktop\\robot\\gosteri")
+            os.system("nautilus ~/nxt")
             pencere.destroy()
         else:
              olay.pack()
@@ -372,13 +372,13 @@ try:
         soru3 = showwarning("Uyarı","Bu komut yaptığınız her şeyi silecek",
                             type=OKCANCEL)
         if soru3 == "ok":
-            os.system("rm gosteri")
-            os.system("rm ekip.txt")
-            os.system("rm kayit")
+            os.system("rm -rf gosteri")
+            os.system("rm -rf ekip.txt")
+            os.system("rm -rf kayit")
             olaysave.close()
-            os.system("rm olaysave.txt")
-            os.system("rm fllana.txt")
-            os.system("rm yap.txt")
+            os.system("rm -rf olaysave.txt")
+            os.system("rm -rf fllana.txt")
+            os.system("rm -rf yap.txt")
             showinfo("Reset","Resetleme işlemi bitti")
             dosya1 = open("ekip.txt","w")
             dosya2 = open("yap.txt","w")
@@ -391,7 +391,7 @@ try:
     buton27.pack(side=TOP,anchor=NW)
     buton34 = Button(text=u"Fotoğraflar",command=fotoyon)
     buton34.pack(side=TOP,anchor=NW)
-    kayitbuton = Button(text=u"Gönder")
+    kayitbuton = Button(text=u"Gönder, #Hazır değil")
     kayitbuton.pack(side=TOP,anchor=NW) 
     mainloop()
 except:
